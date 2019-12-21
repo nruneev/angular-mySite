@@ -1,0 +1,75 @@
+::ng-deep nr-fc-desc {
+    display: block;
+    font-size: 0.75rem;
+    line-height: 1rem;
+    color: #78909C;
+    display: block;
+    margin: 1em 0 3em 0;
+}
+
+::ng-deep nr-fc-label {
+    display: inline-block;
+    font-size: var(--font-size, 0.75rem);
+    color: var(--font-color, #90A4AE);
+    font-weight: var(--font-weight, 0);
+    margin-bottom: 1em;
+    padding-left: 1px;
+}
+
+::ng-deep nr-fc-label[withDesc=true] {
+    font-size: 0.875rem;
+    font-weight: bold;
+    color: #455A64;
+}
+
+::ng-deep nr-fc-label[required=true]::before {
+    content: '*';
+    color: #068AB4;
+    margin-right: 5px;
+    font-size: 1rem;
+    line-height: 0;
+}
+
+::ng-deep nr-checkbox nr-fc-label {
+    font-weight: normal !important;
+    font-size: 0.875rem !important;
+    color: #455A64 !important;
+    margin: 0 0 0.2em 0;
+}
+
+::ng-deep nr-checkbox nr-fc-desc {
+    margin: 0;
+}
+
+::ng-deep nr-input-error {
+    position: relative;
+    display: block;
+    font-size: .625em;
+    color: #c95738;
+    text-align: right;
+    top: 0.5rem;
+}
+
+::ng-deep nr-input-text[appearance=standard],
+::ng-deep nr-input-email[appearance=standard],
+::ng-deep nr-input-password[appearance=standard],
+::ng-deep nr-input-number[appearance=standard] {
+  nr-fc-label::before {
+        content: '';
+    }
+
+  nr-fc-label {
+        font-size: .875em;
+        position: absolute;
+        left: 0;
+        top: 10px;
+        transition: all .4s cubic-bezier(.25,.8,.25,1);
+    }
+
+    &[focus=true] nr-fc-label,
+    &[empty=false] nr-fc-label {
+        top: -10px;
+        font-size: .75em;
+        transform: translateY(-100%);
+    }
+}

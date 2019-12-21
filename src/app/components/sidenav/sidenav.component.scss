@@ -1,0 +1,171 @@
+$trans:  var(--sidenav-transition-period) ease;
+$itemHeight: 3.6363em;
+
+.wm-tree-nav-link,
+.wm-tree-nav-section-toggle {
+  display: block;
+  overflow: hidden;
+  text-decoration: none;
+  white-space: nowrap;
+  width: 100%;
+  cursor: pointer;
+}
+
+.nr-tree-nav-section-toggle {
+  font-weight: bold;
+}
+
+nr-tree-nav {
+  background-color: var(--sidenav-bg, transparent);
+  color: var(--sidenav-text, white);
+  //noinspection CssInvalidFunction
+  font-size: var(--sidenav-font-size, 1em);
+
+  width: 100%;
+
+  .wm-tree-nav-section {
+    position: relative;
+  }
+
+  .wm-tree-nav-section > .wm-tree-nav-list {
+    background-color: var(--sidenav-bg, transparent);
+    overflow: hidden;
+  }
+
+  .wm-tree-nav-section[expanded="false"] > .wm-tree-nav-list {
+    transition: height $trans;
+    height: 0;
+  }
+}
+
+nr-tree-nav.expanded-mode {
+  &[expanded="false"] {
+    .wm-tree-nav-section[expanded="false"] > .wm-tree-nav-list {
+      transition: height $trans;
+    }
+
+    nr-nav-item.lev-0 > .item-label {
+      transform: translateX(1em);
+      transition: transform $trans;
+    }
+  }
+
+  &[expanded="true"] {
+    .wm-tree-nav-section[expanded="true"] > .wm-tree-nav-list {
+      height: calc(var(--wm-nav-items) * #{$itemHeight});
+      transition: height $trans;
+    }
+
+    nr-nav-item.lev-0 > .item-label {
+      transform: translateX(0);
+      transition: transform $trans;
+    }
+  }
+}
+
+nr-tree-nav.compact-mode {
+  .wm-tree-nav-section > .wm-tree-nav-list {
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    left: var(--sidenav-compact-width, 4em);
+  }
+
+  &[expanded="false"] {
+    .wm-tree-nav-section[expanded="false"] > .wm-tree-nav-list {
+      width: 0;
+      transition: width $trans, height 0s linear var(--sidenav-transition-period);
+    }
+
+    .wm-tree-nav-section[expanded="true"] > .wm-tree-nav-list {
+      height: calc(var(--wm-nav-items) * #{$itemHeight});
+      width: 180px;
+      transition: width $trans;
+    }
+  }
+}
+
+nr-tree-nav.expanded-mode .wm-tree-nav-section .wm-tree-nav-item {
+  position: relative;
+
+  &::before {
+    border-left: 1px solid var(--sidenav-text, white);
+    content: "";
+    position: absolute;
+    top: 0;
+    left: calc(var(--sidenav-compact-width, 4em) / 2);
+    opacity: 0.3;
+
+    width: 0;
+    height: $itemHeight;
+  }
+
+  &:last-child::before {
+    height: $itemHeight / 2;
+  }
+
+  nr-nav-item::before {
+    border-top: 1px solid var(--sidenav-text, white);
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: calc(var(--sidenav-compact-width, 4em) / 2);
+    opacity: 0.3;
+
+    width: 0.8em;
+    height: 0;
+  }
+}
+
+nr-tree-nav.compact-mode .wm-tree-nav-section .wm-tree-nav-item {
+  nr-nav-item {
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+
+    padding-left: 20px;
+  }
+}
+
+nr-nav-item {
+  display: block;
+  width: 100%;
+  height: $itemHeight;
+
+  nr-icon {
+    vertical-align: baseline;
+    font-size: 1.4545em;
+  }
+}
+
+nr-nav-item.lev-0,
+.expanded-mode nr-nav-item {
+  display: grid;
+  grid-template-areas: "icon label";
+  grid-template-columns: var(--sidenav-compact-width, 4em) 1fr;
+
+  align-items: center;
+
+  & > nr-icon {
+    grid-area: icon;
+    justify-self: center;
+  }
+
+  & > .item-label {
+    grid-area: label;
+    justify-self: left;
+  }
+}
+
+nr-nav-item.lev-0 > .item-label {
+  transform: translateX(1em);
+}
+
+nr-tree-nav.expanded-mode .wm-tree-nav-link:hover,
+nr-tree-nav.compact-mode .wm-tree-nav-link:hover,
+nr-tree-nav.compact-mode .wm-tree-nav-section-toggle:hover,
+nr-tree-nav.compact-mode .wm-tree-nav-section-toggle[pressed],
+nr-tree-nav.compact-mode .wm-tree-nav-section[expanded="true"] > .wm-tree-nav-list .wm-tree-nav-link ,
+.wm-nav-active-item {
+  background: var(--sidenav-bg-active, #000);
+}

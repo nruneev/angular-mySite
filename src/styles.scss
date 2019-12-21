@@ -1,1 +1,29 @@
-/* You can add global styles to this file, and also import other style files */
+:root,
+:root .theme-default {
+  --main-bg: #F0F3F6;
+  --main-fg: white;
+  --main-bg-danger: #F1403C;
+
+  --header-bg: #263238;
+  --header-fg: #1C272D;
+  --header-accent: rgba(0, 0, 0, 0.2);
+  --header-text-primary: white;
+  --header-text-secondary: #748B96;
+
+  --sidebar-bg: #202B30;
+  --sidebar-fg: #1A2226;
+  --sidebar-accent: rgba(0, 0, 0, 0.2);
+  --sidebar-text-primary: #78909C;
+
+
+  --backlink-bg: rgba(55, 71, 79);
+  --backlink-text:#92A1AB;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}

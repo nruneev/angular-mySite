@@ -1,0 +1,46 @@
+.arrow {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background: var(--wm-tooltip-bg, #000);
+    z-index: -1;
+}
+
+:host[placement] .arrow {
+    position: static;
+}
+
+:host[placement=top] .arrow {
+    transform: translateY(-50%) rotate(45deg);
+}
+
+:host[placement=bottom] .arrow {
+    transform: translateY(50%) rotate(45deg);
+}
+
+.content {
+    padding: 8px 12px;
+    color: var(--wm-tooltip-text, #FFF);
+    background: var(--wm-tooltip-bg, #000);
+    border-radius: 5px;
+}
+
+:host {
+    font-size: 0.7em;
+    position: absolute;
+    visibility: hidden;
+    display: flex;
+    align-items: center;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+:host[placement=top] {
+    flex-direction: column;
+    margin-top: -10px;
+}
+
+:host[placement=bottom] {
+    flex-direction: column-reverse;
+}

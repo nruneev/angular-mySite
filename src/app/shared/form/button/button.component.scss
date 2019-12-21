@@ -1,0 +1,55 @@
+:host {
+    display: flex;
+    width: max-content;
+    cursor: pointer;
+    justify-content: center;
+    align-items: center;
+    border-radius: var(--std-radius, 5px);
+    padding: 10px 18px;
+    background-color: var(--background-color);
+    transition: background-color 0.3s;
+    border: none;
+    text-align: center;
+    box-sizing: border-box;
+    justify-self: end;
+}
+
+:host(a) {
+    color: #068AB4;
+    padding: 0;
+    width: 2.1rem;
+    height: 2.1rem;
+}
+
+:host(a):hover {
+    background-color: #E9EFF2;
+}
+
+:host([nrBtn="basic"]) {
+    background-color: #068AB4;
+    color: white;
+}
+
+:host([nrBtn="primary"]) {
+    background-color: #EFF3F5;
+    color: #92A1AB;
+}
+
+
+:host([nrBtn="link"]) {
+    background-color: #FFF;
+    color: #068AB4;
+}
+
+
+:host([nrBtn="basic"]):hover {
+    background-color: #057ca2;
+}
+
+:host([nrBtn="primary"]):hover {
+    background-color: #e8ecee;
+}
+
+:host([nrBtn="link"]):hover {
+    background-color: #e8ecee;
+}

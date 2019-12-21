@@ -1,0 +1,8 @@
+<ng-content select="nr-fc-label"></ng-content>
+<ng-content select="nr-fc-desc"></ng-content>
+<input hidden
+       type="checkbox"
+       [name]="name"
+       [formControlName]="name"
+       [id]="elementId" />
+<label class="checkbox-mark" [attr.for]="elementId"></label>

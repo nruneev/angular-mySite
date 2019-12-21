@@ -1,0 +1,10 @@
+<nr-tree-nav #treeNav [navItems]="navItems" [expanded]="expanded"
+             (transitionend)="transitionEnd()" [ngClass]="expandedMode ? 'expanded-mode' : 'compact-mode'">
+    <nr-nav-item *nrNavItemDef="let item; when: isRootLevel" class="lev-0" (click)="onClickItem($event, treeNav)">
+        <nr-icon *ngIf="asNavigationItem(item).icon" [name]="asNavigationItem(item).icon"></nr-icon>
+        <span class="item-label">{{asNavigationItem(item).label}}</span>
+    </nr-nav-item>
+    <nr-nav-item *nrNavItemDef="let item" (click)="onClickItem($event, treeNav)">
+        <span class="item-label">{{asNavigationItem(item).label}}</span>
+    </nr-nav-item>
+</nr-tree-nav>

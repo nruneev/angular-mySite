@@ -1,0 +1,17 @@
+<ng-content select="nr-fc-label"></ng-content>
+<ng-select
+        [items]="items"
+        (change)="change.emit($event)"
+        [clearable]="false"
+        [searchable]="false"
+        [placeholder]="placeholder"
+        [(ngModel)]="idSelectedItems"
+        bindLabel="id"
+        bindValue="id"
+        [multiple]="multiple"
+>
+    <ng-template ng-label-tmp ng-option-tmp let-item="item">
+        <ng-template [ngTemplateOutlet]="template" [ngTemplateOutletContext]="{item: item}"></ng-template>
+    </ng-template>
+</ng-select>
+<ng-content select="nr-fc-desc"></ng-content>

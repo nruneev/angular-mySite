@@ -1,0 +1,22 @@
+<cdk-tree [dataSource]="navItems" [treeControl]="treeControl" class="wm-tree-nav-list" [trackBy]="trackBy">
+    <cdk-nested-tree-node *cdkTreeNodeDef="let item; let level = level"
+                          class="wm-tree-nav-item" role="presentation">
+        <a [routerLink]="asNavigationItem(item).link" [routerLinkActive]="'wm-nav-active-item'"
+           class="wm-tree-nav-link" role="treeitem">
+            <ng-container
+                    *ngTemplateOutlet="getTemplate(item, level); context: {$implicit: item, level: level}"></ng-container>
+        </a>
+    </cdk-nested-tree-node>
+    <cdk-nested-tree-node *cdkTreeNodeDef="let item; let level = level; when: isSection"
+                          class="wm-tree-nav-section" role="presentation" [attr.expanded]="treeControl.isExpanded(item)"
+                          [attr.style]="sanitizeStyle('--wm-nav-items: ' + asNavigationItem(item).children.length)">
+        <div cdkTreeNodeToggle class="wm-tree-nav-section-toggle" role="treeitem"
+             [attr.aria-owns]="'nav-section-' + asNavigationItem(item).id">
+            <ng-container
+                    *ngTemplateOutlet="getTemplate(item, level); context: {$implicit: item, level: level}"></ng-container>
+        </div>
+        <div id="nav-section-{{asNavigationItem(item).id}}" class="wm-tree-nav-list" role="group">
+            <ng-container cdkTreeNodeOutlet></ng-container>
+        </div>
+    </cdk-nested-tree-node>
+</cdk-tree>

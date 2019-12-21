@@ -1,0 +1,19 @@
+<ng-content select="nr-fc-label"></ng-content>
+
+<label *ngIf="!image && !loading" [for]="elementId" class="button">Выберите файл</label>
+
+<label class="preview" [for]="elementId" *ngIf="image || loading">
+    <div class="image">
+        <img *ngIf="!loading" [alt]="name" [src]="image" />
+        <wm-icon *ngIf="loading" name="spinner"></wm-icon>
+    </div>
+    <div class="preview-info">
+        <span>{{fileName}}</span>
+        <label [for]="elementId">изменить</label>
+    </div>
+</label>
+
+<input [id]="elementId" [name]="name" accept="image/*" type="file" class="file-input" (change)="change($event)">
+<input type="text" [formControlName]="name">
+
+<ng-content select="nr-fc-desc"></ng-content>

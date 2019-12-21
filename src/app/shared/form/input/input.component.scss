@@ -1,0 +1,64 @@
+:host {
+    display: block;
+    margin-bottom: 1.5em;
+    position: relative;
+}
+
+input {
+    display: block;
+    width: 100%;
+    font-size: .875em;
+    color: #37474F;
+    background-color: white;
+    border: none;
+    box-sizing: border-box;
+    outline: none;
+}
+
+input[type="password"] {
+    letter-spacing: 5px;
+}
+
+:host[appearance=outline] {
+    input {
+        padding: 13px;
+        border: 1px solid #D5DDE2;
+        border-radius: 5px;
+    }
+
+    input:hover {
+        border: 1px solid #C0C7CC;
+    }
+
+    input:focus {
+        border: 1px solid #068AB4;
+    }
+
+    input.ng-touched.ng-invalid {
+        border: 1px solid #C95738;
+    }
+}
+
+:host[appearance=standard] {
+    input {
+        padding: 10px 5px;
+        border-bottom: 1px solid #D5DDE2;
+    }
+
+    input:hover {
+        border-bottom: 1px solid #C0C7CC;
+    }
+
+    &[empty=false] input {
+        border-bottom: 1px solid #058AB4;
+    }
+
+    input:focus {
+        background-color: rgba(5, 138, 180, 0.05);
+        border-bottom: 1px solid #058AB4;
+    }
+
+    input.ng-touched.ng-invalid {
+        border-bottom: 1px solid #C95738;
+    }
+}

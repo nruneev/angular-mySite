@@ -1,0 +1,22 @@
+<nr-header cdkMonitorSubtreeFocus>
+  <button id="sidebar-toggle" [agentSidebarToggle]="sidebarState$ | async" (click)="toggleSidebar()"
+          aria-controls="main-sidebar" class="header-control header-control-lg" tabindex="1">
+    <nr-icon name="burger" aria-hidden="true"></nr-icon>
+  </button>
+  <a id="to-main-page" routerLink="/" title="На главную" i18n-title="@@toMainPage">
+    <p>Front-end developer Nikita Runeev</p>
+  </a>
+  <div class="status-controls">
+  <span class="status-period">
+            <nr-icon name="watch" aria-hidden="true"></nr-icon>
+            <nr-stopwatch i18n-title="@@statusPeriod" title="Время" [hours]="hours" [minutes]="minutes" [seconds]="seconds"></nr-stopwatch>
+        </span>
+</div>
+</nr-header>
+<aside id="main-sidebar" nrExpandable [nrExpanded]="sidebarExpanded$ | async">
+  <agent-sidenav [navItems]="mainNavigationItems" [expanded]="sidebarExpanded$ | async"></agent-sidenav>
+  <span>v. 0.0.1</span>
+</aside>
+<main>
+  <router-outlet></router-outlet>
+</main>

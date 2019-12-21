@@ -1,0 +1,38 @@
+<ul *ngIf="pages && pages.length && pages.length > 1" class="pagination">
+  <li>
+
+    <span *ngIf="selectPage === prevPage" class="arrow left">
+      <nr-icon name="arrow"></nr-icon>
+    </span>
+    <a *ngIf="selectPage !== prevPage" class="arrow left" routerLink="./" [queryParams]="{page: prevPage}" queryParamsHandling="merge">
+      <nr-icon name="arrow"></nr-icon>
+    </a>
+
+  </li>
+  <li *ngIf="startPage !== 1">
+
+    <a routerLink="./" [queryParams]="{page: startPage - 1}" queryParamsHandling="merge">...</a>
+
+  </li>
+  <li *ngFor="let page of pages" [ngClass]="{active:selectPage === page}">
+
+    <span *ngIf="selectPage === page">{{page}}</span>
+    <a *ngIf="selectPage !== page" routerLink="./" [queryParams]="{page: page}" queryParamsHandling="merge">{{page}}</a>
+
+  </li>
+  <li *ngIf="endPage !== totalPage">
+
+    <a routerLink="./" [queryParams]="{page: endPage + 1}" queryParamsHandling="merge">...</a>
+
+  </li>
+  <li>
+
+    <span *ngIf="selectPage === nextPage" class="arrow">
+      <nr-icon name="arrow"></nr-icon>
+    </span>
+    <a *ngIf="selectPage !== nextPage" class="arrow" routerLink="./" [queryParams]="{page: nextPage}" queryParamsHandling="merge">
+      <nr-icon name="arrow"></nr-icon>
+    </a>
+
+  </li>
+</ul>
