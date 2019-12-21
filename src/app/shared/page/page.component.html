@@ -1,0 +1,11 @@
+<header>
+    <div>
+        <nr-back-button *ngIf="needBackBtn" [backURL]="backBtnURL"></nr-back-button>
+        <h1>{{ title }}</h1>
+    </div>
+    <ng-content select="af-page-controls"></ng-content>
+</header>
+<article #article>
+    <ng-content select="af-page-content"></ng-content>
+    <ng-content></ng-content>
+</article>

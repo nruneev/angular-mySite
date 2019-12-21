@@ -1,0 +1,41 @@
+nr-page-content {
+  margin: 50px 0;
+  padding: 0 25px;
+  display: grid;grid-template-areas:
+  "menu form";
+  grid-template-columns: auto 1fr;
+
+}
+
+.menu {
+  grid-area: menu;
+}
+
+.menu div {
+  display: grid;
+  height: fit-content;
+  padding: 10px 0;
+  border-left: 1px solid #C4C4C4;
+}
+
+.menu a {
+  padding: 10px;
+  color: #B0BEC5;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.active {
+  border-left: 5px solid #068AB4;
+}
+
+.form {
+  grid-area: form;
+  margin-left: 50px;
+}
+
+nr-section-md {
+  width: 1205px;
+  height: 650px;
+
+}

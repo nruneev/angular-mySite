@@ -13,6 +13,7 @@ import {StopwatchModule} from './shared/stopwatch';
 import {SelectModule} from './shared/form/select/select.module';
 import {AvatarModule} from './shared/avatar';
 import {A11yModule} from '@angular/cdk/a11y';
+import {AboutMeModule} from './about-me/about-me.module';
 
 @NgModule({
   declarations: [
@@ -24,6 +25,7 @@ import {A11yModule} from '@angular/cdk/a11y';
   imports: [
     BrowserModule,
     AppRoutingModule,
+    AboutMeModule,
     IconModule,
     CoreModule,
     ExpandableModule,

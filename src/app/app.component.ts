@@ -16,13 +16,13 @@ export class AppComponent implements OnInit, OnDestroy{
   private timerId = null;
 
   mainNavigationItems: NavigationItem[] = [
-    {id: 0, label: 'Библиотека "Поля для формы"', link: 'formField', icon: 'form'},
-    {id: 1, label: 'Библиотека "Таблицы"', link: 'table', icon: 'table'},
-    {id: 2, label: 'Отзывы', icon: 'chat', children: [
-        {id: 0, label: 'Смотреть', link: 'review'},
-        {id: 1, label: 'Написать', link: 'write'}
+    {id: 0, label: 'Library "FormFields"', link: 'formFields', icon: 'form'},
+    {id: 1, label: 'Library "Table"', link: 'table', icon: 'table'},
+    {id: 2, label: 'Feedback', icon: 'chat', children: [
+        {id: 0, label: 'List', link: 'review'},
+        {id: 1, label: 'Create', link: 'new'}
     ]},
-    {id: 3, label: 'Оставить заказ', link: 'chat', icon: 'message'}
+    {id: 3, label: 'Write me', link: 'chat', icon: 'message'}
   ];
 
 
