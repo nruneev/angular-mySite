@@ -9,24 +9,24 @@ nr-page-content {
 
 .menu {
   grid-area: menu;
-}
 
-.menu div {
-  display: grid;
-  height: fit-content;
-  padding: 10px 0;
-  border-left: 1px solid #C4C4C4;
-}
+  div {
+    display: grid;
+    height: fit-content;
+    padding: 10px 0;
+    border-left: 1px solid #C4C4C4;
+  }
 
-.menu a {
-  padding: 10px;
-  color: #B0BEC5;
-  font-weight: bold;
-  text-decoration: none;
-}
+  a {
+    padding: 10px;
+    color: #B0BEC5;
+    font-weight: bold;
+    text-decoration: none;
+  }
 
-.active {
-  border-left: 5px solid #068AB4;
+  .active {
+    border-left: 5px solid #068AB4;
+  }
 }
 
 .form {
@@ -38,4 +38,27 @@ nr-section-md {
   width: 1205px;
   height: 650px;
 
+  div {
+    display: block;
+    margin-bottom: 35px;
+  }
+
+  span {
+    margin-top: 20px;
+    font-size: 1rem;
+    font-weight: bold;
+    color: #78909C;
+  }
+
+  p {
+    font-size: 1rem;
+    padding: 0 0 0 15px;
+    font-weight: bold;
+    color: #B0BEC5;
+  }
+
+  a {
+    text-decoration: none;
+    color: #068AB4;
+  }
 }

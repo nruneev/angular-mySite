@@ -8,9 +8,10 @@ import {SectionModule} from '../shared/section';
 import { SkillComponent } from './skill/skill.component';
 import { LinkComponent } from './link/link.component';
 import { FeedbackComponent } from './feedback/feedback.component';
+import {FormModule} from '../shared/form/form.module';
 
 @NgModule({
-  imports: [CommonModule, AboutMeRoutingModule, PageModule, SectionModule],
+  imports: [CommonModule, AboutMeRoutingModule, PageModule, SectionModule, FormModule],
   declarations: [AboutMeComponent, GeneralComponent, SkillComponent, LinkComponent, FeedbackComponent]
 })
 export class AboutMeModule { }

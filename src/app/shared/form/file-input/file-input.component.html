@@ -5,7 +5,7 @@
 <label class="preview" [for]="elementId" *ngIf="image || loading">
     <div class="image">
         <img *ngIf="!loading" [alt]="name" [src]="image" />
-        <wm-icon *ngIf="loading" name="spinner"></wm-icon>
+        <nr-icon *ngIf="loading" name="spinner"></nr-icon>
     </div>
     <div class="preview-info">
         <span>{{fileName}}</span>
