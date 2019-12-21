@@ -9,9 +9,11 @@ import { SkillComponent } from './skill/skill.component';
 import { LinkComponent } from './link/link.component';
 import { FeedbackComponent } from './feedback/feedback.component';
 import {FormModule} from '../shared/form/form.module';
+import {TableModule} from '../shared/table';
+import {PaginatorModule} from '../shared/paginator/paginator.module';
 
 @NgModule({
-  imports: [CommonModule, AboutMeRoutingModule, PageModule, SectionModule, FormModule],
+  imports: [CommonModule, AboutMeRoutingModule, PageModule, SectionModule, FormModule, TableModule, PaginatorModule],
   declarations: [AboutMeComponent, GeneralComponent, SkillComponent, LinkComponent, FeedbackComponent]
 })
 export class AboutMeModule { }

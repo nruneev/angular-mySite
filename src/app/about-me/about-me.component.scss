@@ -61,4 +61,15 @@ nr-section-md {
     text-decoration: none;
     color: #068AB4;
   }
+
+  nr-paginator {
+    --wm-pagination-border-radius: var(--std-radius);
+    --wm-pagination-font-size: 13px;
+    --wm-pagination-bg-color: white;
+    --wm-pagination-color: #bbbbbb;
+    --wm-pagination-bg-color-active-element: #eee;
+    --wm-pagination-color-active-element: #337ab7;
+
+    justify-self: end;
+  }
 }
