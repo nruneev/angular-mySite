@@ -1,4 +1,10 @@
-import {Component} from '@angular/core';
+import {ChangeDetectorRef, Component, OnInit} from '@angular/core';
+import {Subscription} from 'rxjs';
+
+import {Table} from '../../shared/table';
+import {FeedbackQuery} from '../../core/state/feedback/feedback.query';
+import {Feedback} from '../../core/state/feedback/feedback.model';
+import {FeedbackService} from '../../core/state/feedback/feedback.service';
 
 
 @Component({
@@ -6,20 +12,36 @@ import {Component} from '@angular/core';
   templateUrl: './feedback.component.html',
   styleUrls: ['../about-me.component.scss']
 })
-export class FeedbackComponent {
-  table = {
-    headerGroups: [
-      {headers: [
-          '№', 'Name', 'Email', 'Feedback'
-        ]}
-    ],
-    rowGroups: [
-      {
-        rows: [
-          ['1', 'Ника Шлендер', '-', 'Отличный исполнитель, согласовали то, что хотела видеть, и получил на выходе именно это. Рекомендую Всем!'],
-          ['2', 'Тимур Романченко', 'tim45250@gmail.com', 'Сотрудничали с Никитой по проекту "Дневники истории VK", Никита полностью выполнил все работы по ТЗ и предложил ряд интересных новшеств, которые сам же и реализовал. У Никиты хорошие знания клиентской части web приложений и желание работать. Будем рады продолжить с ним сотрудничество']
-        ]
-      }
-    ]
-  };
+export class FeedbackComponent implements OnInit {
+  feedbacks: Subscription;
+  table: Table;
+
+  constructor(private query: FeedbackQuery,
+              private service: FeedbackService,
+              private cd: ChangeDetectorRef) {}
+
+  ngOnInit() {
+    this.feedbacks = this.query.selectAll().subscribe(this.createTable.bind(this));
+  }
+
+  createTable(feedback: Feedback[]) {
+    this.table  = {
+      headerGroups: [
+        {headers: [
+            '№', 'Name', 'Email', 'Feedback'
+          ]}
+      ],
+      rowGroups: [
+        {
+          rows: feedback.map((item, index) => [
+            index + 1,
+            item.name,
+            item.email,
+            item.feedback
+          ])
+        }
+      ]
+    };
+    this.cd.markForCheck();
+  }
 }
