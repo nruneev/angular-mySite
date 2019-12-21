@@ -11,7 +11,8 @@
             <nr-icon name="watch" aria-hidden="true"></nr-icon>
             <nr-stopwatch i18n-title="@@statusPeriod" title="Время" [hours]="hours" [minutes]="minutes" [seconds]="seconds"></nr-stopwatch>
         </span>
-</div>
+  </div>
+  <agent-widget></agent-widget>
 </nr-header>
 <aside id="main-sidebar" nrExpandable [nrExpanded]="sidebarExpanded$ | async">
   <agent-sidenav [navItems]="mainNavigationItems" [expanded]="sidebarExpanded$ | async"></agent-sidenav>

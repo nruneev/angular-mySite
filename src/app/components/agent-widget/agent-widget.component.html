@@ -1,0 +1,9 @@
+<div class="main">
+    <nr-avatar class="avatar"></nr-avatar>
+    <span class="name">Посетитель</span>
+    <nr-select-template [items]="menuItems">
+        <nr-select-item *item="let item = item">
+                <a [routerLink]="item.link">{{item.title}}</a>
+        </nr-select-item>
+    </nr-select-template>
+</div>
