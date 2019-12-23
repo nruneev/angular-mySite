@@ -1,0 +1,28 @@
+<nr-page title="Create feedback" [needBackBtn]="true" backBtnURL="/feedback">
+  <nr-page-content>
+    <nr-section-md>
+      <form [formGroup]="form">
+        <nr-input-text name="name">
+          <nr-fc-label>Name:</nr-fc-label>
+          <nr-fc-desc>Please, input your real name.</nr-fc-desc>
+        </nr-input-text>
+        <nr-input-email name="email">
+          <nr-fc-label>Email:</nr-fc-label>
+          <nr-fc-desc>Please, input your real email address. We will sent you message with code for activation.</nr-fc-desc>
+        </nr-input-email>
+        <nr-textarea name="text">
+          <nr-fc-label>Feedback:</nr-fc-label>
+          <nr-fc-desc>Please, input your feedback.</nr-fc-desc>
+        </nr-textarea>
+        <div class="buttons-wrap">
+          <button type="button" routerLink="/feedback" nrBtn="primary">
+            Отменить
+          </button>
+          <button type="post" nrBtn="basic">
+            Сохранить
+          </button>
+        </div>
+      </form>
+    </nr-section-md>
+  </nr-page-content>
+</nr-page>

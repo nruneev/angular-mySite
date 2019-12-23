@@ -9,7 +9,7 @@ import {map} from 'rxjs/operators';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent implements OnInit, OnDestroy{
+export class AppComponent implements OnInit, OnDestroy {
   hours: string;
   minutes: string;
   seconds: string;
@@ -19,8 +19,8 @@ export class AppComponent implements OnInit, OnDestroy{
     {id: 0, label: 'Library "FormFields"', link: 'formFields', icon: 'form'},
     {id: 1, label: 'Library "Table"', link: 'table', icon: 'table'},
     {id: 2, label: 'Feedback', icon: 'chat', children: [
-        {id: 0, label: 'List', link: 'review'},
-        {id: 1, label: 'Create', link: 'new'}
+        {id: 0, label: 'List', link: 'feedback'},
+        {id: 1, label: 'Create', link: 'feedback/new'}
     ]},
     {id: 3, label: 'Write me', link: 'chat', icon: 'message'}
   ];
