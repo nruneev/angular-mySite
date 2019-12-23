@@ -1,0 +1,29 @@
+nr-page {
+  width: 630px;
+  margin: 50px auto;
+}
+
+nr-page-content {
+  nr-section-md {
+    margin-top: 25px;
+  }
+}
+
+p {
+  font-size: 1rem;
+  padding: 0 0 0 15px;
+  font-weight: bold;
+  color: #B0BEC5;
+}
+
+
+
+.buttons-wrap {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.buttons-wrap button {
+  margin-left: 15px;
+}
+

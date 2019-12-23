@@ -14,6 +14,11 @@ import {SelectModule} from './shared/form/select/select.module';
 import {AvatarModule} from './shared/avatar';
 import {A11yModule} from '@angular/cdk/a11y';
 import {AboutMeModule} from './about-me/about-me.module';
+import { FormFieldComponent } from './form-field/form-field.component';
+import {PageModule} from './shared/page';
+import {SectionModule} from './shared/section';
+import {FormModule} from './shared/form/form.module';
+import {FormGroup, FormsModule, ReactiveFormsModule} from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -21,6 +26,7 @@ import {AboutMeModule} from './about-me/about-me.module';
     SidenavComponent,
     AgentWidgetComponent,
     SidebarToggleComponent,
+    FormFieldComponent,
   ],
   imports: [
     BrowserModule,
@@ -31,10 +37,15 @@ import {AboutMeModule} from './about-me/about-me.module';
     ExpandableModule,
     HeaderModule,
     NavigationModule,
+    FormModule,
+    FormsModule,
+    ReactiveFormsModule,
     StopwatchModule,
     SelectModule,
     AvatarModule,
-    A11yModule
+    A11yModule,
+    PageModule,
+    SectionModule
   ],
   providers: [],
   bootstrap: [AppComponent]

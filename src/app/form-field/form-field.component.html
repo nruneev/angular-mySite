@@ -1,0 +1,48 @@
+<nr-page title="Library “FormField”">
+  <nr-page-content>
+    <nr-section-md>
+      <span>
+        <p>If you will use this library, you would create this simple form by using readable HTML-tags with prebuild
+          SCSS styles. For example, it is one of the many forms, which you can create:</p>
+      </span>
+      <form [formGroup]="form">
+        <nr-input-text name="name">
+          <nr-fc-label>Name:</nr-fc-label>
+          <nr-fc-desc>Please, input your real name.</nr-fc-desc>
+        </nr-input-text>
+        <nr-input-text name="surname">
+          <nr-fc-label>Surname:</nr-fc-label>
+          <nr-fc-desc>Please, input your real surname.</nr-fc-desc>
+        </nr-input-text>
+        <nr-input-number name="year">
+          <nr-fc-label>Year:</nr-fc-label>
+          <nr-fc-desc>Are you older than 18 years ago?</nr-fc-desc>
+        </nr-input-number>
+        <nr-input-email name="email">
+          <nr-fc-label>Email:</nr-fc-label>
+          <nr-fc-desc>Please, input your real email address. We will sent you message with code for activation.</nr-fc-desc>
+        </nr-input-email>
+        <nr-input-password name="password">
+          <nr-fc-label>Password:</nr-fc-label>
+          <nr-fc-desc>Please, input 5-6 chart.</nr-fc-desc>
+        </nr-input-password>
+        <nr-input-text name="site">
+          <nr-fc-label>Your web-site:</nr-fc-label>
+          <nr-fc-desc>It will be place on block with your information on your page.</nr-fc-desc>
+        </nr-input-text>
+        <nr-checkbox name="checkbox">
+          <nr-fc-label>Will we sent you message with news?</nr-fc-label>
+          <nr-fc-desc>It will be regular (1-2 on a week)</nr-fc-desc>
+        </nr-checkbox>
+        <div class="buttons-wrap">
+          <button type="button" nrBtn="primary">
+            Отменить
+          </button>
+          <button type="post" nrBtn="basic">
+            Сохранить
+          </button>
+        </div>
+      </form>
+    </nr-section-md>
+  </nr-page-content>
+</nr-page>
