@@ -1,0 +1,15 @@
+<ng-content select="nr-fc-label"></ng-content>
+<textarea
+  [name]="name"
+  [formControlName]="name"
+  [placeholder]="appearance !== 'standard' ? placeholder : ''"
+  (focus)="focus=true"
+  (blur)="focus=false"
+></textarea>
+<nr-input-error *ngIf="invalid && invalid.required">Поле обязательно к заполнению</nr-input-error>
+<nr-input-error *ngIf="invalid && invalid.maxlength">Превышен лимит символов</nr-input-error>
+<nr-input-error *ngIf="invalid && invalid.email">Недопустимый Email адрес</nr-input-error>
+<nr-input-error *ngIf="invalid && invalid.pattern">Пароль содержит недопустимые символы</nr-input-error>
+<nr-input-error *ngIf="invalid && invalid.min">Число не может быть отрицательным</nr-input-error>
+<nr-input-error *ngIf="invalid && invalid.departmentKey">Недопустимый буквенный идентификатор отдела</nr-input-error>
+<ng-content select="nr-fc-desc"></ng-content>

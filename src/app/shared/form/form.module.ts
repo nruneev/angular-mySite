@@ -13,6 +13,7 @@ import {FromControlDescDirective} from './form-control/form-control-desc.directi
 import {FromControlLabelDirective} from './form-control/form-control-label.directive';
 import {InputErrorDirective} from './input-error/input-error.directive';
 import {IconModule} from '../icon/icon.module';
+import { TextareaComponent } from './textarea/textarea.component';
 
 
 @NgModule({
@@ -24,6 +25,7 @@ import {IconModule} from '../icon/icon.module';
         InputErrorDirective,
         FromControlLabelDirective,
         FromControlDescDirective,
+        TextareaComponent,
     ],
     imports: [
         CommonModule,
@@ -41,6 +43,7 @@ import {IconModule} from '../icon/icon.module';
         InputErrorDirective,
         FromControlDescDirective,
         FromControlLabelDirective,
+        TextareaComponent
     ]
 })
 

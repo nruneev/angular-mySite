@@ -19,6 +19,7 @@ import {PageModule} from './shared/page';
 import {SectionModule} from './shared/section';
 import {FormModule} from './shared/form/form.module';
 import {FormGroup, FormsModule, ReactiveFormsModule} from '@angular/forms';
+import { WriteMeComponent } from './write-me/write-me.component';
 
 @NgModule({
   declarations: [
@@ -27,6 +28,7 @@ import {FormGroup, FormsModule, ReactiveFormsModule} from '@angular/forms';
     AgentWidgetComponent,
     SidebarToggleComponent,
     FormFieldComponent,
+    WriteMeComponent,
   ],
   imports: [
     BrowserModule,
