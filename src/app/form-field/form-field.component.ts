@@ -18,4 +18,15 @@ export class FormFieldComponent {
   });
 
   constructor(private fb: FormBuilder) { }
+
+  async save() {
+    if (this.form.valid) {
+    } else {
+      for (const control in this.form.controls) {
+        this.form.controls[control].markAsDirty();
+        this.form.controls[control].markAsTouched();
+        this.form.controls[control].updateValueAndValidity();
+      }
+    }
+  }
 }

@@ -2,6 +2,6 @@ import {Directive} from '@angular/core';
 
 
 @Directive({
-    selector: 'af-td'
+    selector: 'nr-td'
 })
 export class TdDirective {}

@@ -6,7 +6,7 @@ import {TdDefDirective} from './tddef.directive';
   selector: 'nr-table',
   templateUrl: './table.component.html',
   styleUrls: ['./table.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+  changeDetection: ChangeDetectionStrategy.Default
 })
 export class TableComponent {
   @Input() table: Table;

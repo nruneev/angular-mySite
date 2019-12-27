@@ -20,6 +20,8 @@ import {SectionModule} from './shared/section';
 import {FormModule} from './shared/form/form.module';
 import {FormGroup, FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { WriteMeComponent } from './write-me/write-me.component';
+import {TableComponents} from './table/table.component';
+import {TableModule} from './shared/table';
 
 @NgModule({
   declarations: [
@@ -29,6 +31,7 @@ import { WriteMeComponent } from './write-me/write-me.component';
     SidebarToggleComponent,
     FormFieldComponent,
     WriteMeComponent,
+    TableComponents,
   ],
   imports: [
     BrowserModule,
@@ -47,7 +50,8 @@ import { WriteMeComponent } from './write-me/write-me.component';
     AvatarModule,
     A11yModule,
     PageModule,
-    SectionModule
+    SectionModule,
+    TableModule
   ],
   providers: [],
   bootstrap: [AppComponent]

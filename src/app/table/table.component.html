@@ -1,0 +1,27 @@
+<nr-page title="Library “Table”">
+  <nr-page-content>
+    <nr-section-md>
+      <form [formGroup]="form">
+        <p>If you will use this library, you would create table with image, button by use readable HTML-tags with prebuild
+          SCSS styles. For example, it is one of the many table, which you can create.</p>
+        <p>On this example, you can add column and set them default text.</p>
+        <div style="display: inline-flex; height: 120px; margin-left: 20px">
+          <nr-input-text name="nameField">
+            <nr-fc-label>Name Column</nr-fc-label>
+            <nr-fc-desc>Column with this name will be create on table</nr-fc-desc>
+          </nr-input-text>
+          <nr-input-text name="textSimple">
+            <nr-fc-label>Simple text</nr-fc-label>
+            <nr-fc-desc>This text will put in column.</nr-fc-desc>
+          </nr-input-text>
+          <button type="post" (click)="save()" nrBtn="basic">
+            Add column
+          </button>
+        </div>
+      </form>
+    </nr-section-md>
+    <nr-section-md style="margin-top: 25px">
+      <nr-table [table]="table"></nr-table>
+    </nr-section-md>
+  </nr-page-content>
+</nr-page>
