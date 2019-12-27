@@ -7,6 +7,8 @@ import {FormBuilder, Validators} from '@angular/forms';
   styleUrls: ['./write-me.component.scss']
 })
 export class WriteMeComponent {
+  success = false;
+
   form = this.fb.group({
     name: ['', Validators.required],
     email: ['', [Validators.required, Validators.email]],
@@ -14,4 +16,16 @@ export class WriteMeComponent {
   });
 
   constructor(private fb: FormBuilder) { }
+
+  async save() {
+    if (this.form.valid) {
+      this.success = true;
+    } else {
+      for (const control in this.form.controls) {
+        this.form.controls[control].markAsDirty();
+        this.form.controls[control].markAsTouched();
+        this.form.controls[control].updateValueAndValidity();
+      }
+    }
+  }
 }

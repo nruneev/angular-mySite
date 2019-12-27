@@ -1,7 +1,7 @@
 <nr-page title="Create feedback" [needBackBtn]="true" backBtnURL="/feedback">
   <nr-page-content>
     <nr-section-md>
-      <form [formGroup]="form">
+      <form [formGroup]="form" *ngIf="! success">
         <nr-input-text name="name">
           <nr-fc-label>Name:</nr-fc-label>
           <nr-fc-desc>Please, input your real name.</nr-fc-desc>
@@ -18,11 +18,19 @@
           <button type="button" routerLink="/feedback" nrBtn="primary">
             Отменить
           </button>
-          <button type="post" nrBtn="basic">
+          <button type="post" (click)="save()" nrBtn="basic">
             Сохранить
           </button>
         </div>
       </form>
+      <div *ngIf="success">
+        <span class="title">Thank for feedback!</span>
+        <p class="message">Your feedback on moderation. We will publish them until 1-2 days.</p>
+        <p class="message">Feedback are moderation to avoid spam on feedback.</p>
+        <p class="message">As soon, as we publish it, you will recive a notification by email (if you input email-address).</p>
+
+        <button type="button"  class="back" routerLink="/feedback" nrBtn="primary">Go back</button>
+      </div>
     </nr-section-md>
   </nr-page-content>
 </nr-page>

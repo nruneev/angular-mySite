@@ -1,7 +1,7 @@
 <nr-page title="Write me">
   <nr-page-content>
     <nr-section-md>
-      <form [formGroup]="form">
+      <form [formGroup]="form" *ngIf="!success">
         <nr-input-text name="name">
           <nr-fc-label>Name:</nr-fc-label>
           <nr-fc-desc>Please, input your real name.</nr-fc-desc>
@@ -18,11 +18,18 @@
           <button type="button" nrBtn="primary">
             Отменить
           </button>
-          <button type="post" nrBtn="basic">
+          <button type="post" (click)="save()" nrBtn="basic">
             Сохранить
           </button>
         </div>
       </form>
+      <div *ngIf="success">
+        <span class="title">Thank for message!</span>
+        <p class="message">We answer your as soon as possible. It is usually 1-2 days.</p>
+        <p class="message">When we answer your, you will recive a notification by email.</p>
+
+        <button type="button"  class="back" routerLink="/feedback" nrBtn="primary">Go back</button>
+      </div>
     </nr-section-md>
   </nr-page-content>
 </nr-page>
