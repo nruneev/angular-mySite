@@ -73,3 +73,21 @@ nr-section-md {
     justify-self: end;
   }
 }
+
+.button {
+  margin: 20px 0;
+
+  div {
+    display: inline-flex;
+  }
+  p {
+    width: 350px;
+    padding: 10px;
+  }
+  button {
+    width: 250px;
+    height: 90px;
+    margin-top: 5px;
+    margin-right: 10px;
+  }
+}
