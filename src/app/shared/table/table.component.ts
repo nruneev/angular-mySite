@@ -13,7 +13,7 @@ export class TableComponent {
 
   @ContentChildren(TdDefDirective, {}) tdTemplates: QueryList<TdDefDirective>;
 
-  private currentCustomColumn: TdDefDirective | undefined;
+  currentCustomColumn: TdDefDirective | undefined;
 
   haveHeaderGroupTitles(): boolean {
     return !!this.table.headerGroups.find((headerGroup) => !!headerGroup.title);
