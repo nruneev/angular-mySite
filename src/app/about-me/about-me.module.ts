@@ -5,7 +5,6 @@ import {AboutMeRoutingModule} from './about-me-routing.module';
 import {PageModule} from '../shared/page';
 import { GeneralComponent } from './general/general.component';
 import {SectionModule} from '../shared/section';
-import { SkillComponent } from './skill/skill.component';
 import { LinkComponent } from './link/link.component';
 import { FeedbackComponent } from './feedback/feedback.component';
 import {FormModule} from '../shared/form/form.module';
@@ -14,6 +13,6 @@ import {PaginatorModule} from '../shared/paginator/paginator.module';
 
 @NgModule({
   imports: [CommonModule, AboutMeRoutingModule, PageModule, SectionModule, FormModule, TableModule, PaginatorModule],
-  declarations: [AboutMeComponent, GeneralComponent, SkillComponent, LinkComponent, FeedbackComponent]
+  declarations: [AboutMeComponent, GeneralComponent, LinkComponent, FeedbackComponent]
 })
 export class AboutMeModule { }

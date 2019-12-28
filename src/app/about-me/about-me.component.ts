@@ -8,7 +8,6 @@ import {Component} from '@angular/core';
 export class AboutMeComponent {
   items = [
     {link: 'general', title: 'Who am I?'},
-    {link: 'skill', title: 'Why do you need me?'},
     {link: 'link-to-my-work', title: 'Link to my work'},
     {link: 'feedback', title: 'Your feedback'}
   ];
