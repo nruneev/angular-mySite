@@ -23,7 +23,8 @@ export class NewComponent {
 
   async save() {
     if (this.form.valid) {
-      this.success = await this.service.sendFeedback(this.createItem(this.form));
+      await this.service.sendFeedback(this.createItem(this.form));
+      this.success = true;
     } else {
       for (const control in this.form.controls) {
         this.form.controls[control].markAsDirty();

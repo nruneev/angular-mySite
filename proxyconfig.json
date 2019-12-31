@@ -1,0 +1,7 @@
+{
+  "/php": {
+    "target": "http://localhost:3000",
+    "secure": false,
+    "ChangeOrigin": true
+  }
+}

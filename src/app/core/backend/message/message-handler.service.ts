@@ -1,25 +1,31 @@
 import { Injectable } from '@angular/core';
 import {CoreModule} from '../../core.module';
 import {throwError} from 'rxjs';
+import {HttpClient, HttpParams} from '@angular/common/http';
+
 
 @Injectable({
   providedIn: CoreModule
 })
 export class MessageHandlerService {
-  async sendMessage(to: string, subject: string, type: string, text: string, name: string) {
+  isSend = false;
+
+  constructor(private http: HttpClient) {
+  }
+
+  sendMessage(to: string, subject: string, type: string, text: string, name: string) {
+    let params = new HttpParams();
+    params = params.append('to', to);
+    params = params.append('subject', subject);
+    params = params.append('type', type);
+    params = params.append('text', text);
+    params = params.append('name', name);
     try {
-      const response = await fetch('../php/email.php', {
-        method: 'POST',
-        body: JSON.stringify([to, subject, type, text, name]),
-        headers: {
-          'Content-Type': 'application/json'
-        }
-      });
-      const myJson = await response.json();
-      console.log(JSON.stringify(myJson));
-      return response.ok;
+      this.http.get('/php/email.php').subscribe(_ => this.isSend = true);
+      return this.isSend;
     } catch (e) {
       throwError(e);
+      return this.isSend;
     }
   }
 }

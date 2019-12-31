@@ -9,6 +9,7 @@ import {ReactiveFormsModule} from '@angular/forms';
 import {FormModule} from '../shared/form/form.module';
 import {TableModule} from '../shared/table';
 import {IconModule} from '../shared/icon/icon.module';
+import {HttpClientModule} from '@angular/common/http';
 
 
 
@@ -21,6 +22,7 @@ import {IconModule} from '../shared/icon/icon.module';
     SectionModule,
     ReactiveFormsModule,
     FormModule,
+    HttpClientModule,
     TableModule,
     IconModule
   ]
