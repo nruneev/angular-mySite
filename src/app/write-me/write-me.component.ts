@@ -1,5 +1,8 @@
 import {Component} from '@angular/core';
-import {FormBuilder, Validators} from '@angular/forms';
+import {FormBuilder, FormGroup, Validators} from '@angular/forms';
+import {MessageService} from '../core/state/message/message.service';
+import {Feedback} from '../core/state/feedback/feedback.model';
+import {Message} from '../core/state/message/message.model';
 
 @Component({
   selector: 'nr-write-me',
@@ -15,10 +18,12 @@ export class WriteMeComponent {
     text: ['', [Validators.required]]
   });
 
-  constructor(private fb: FormBuilder) { }
+  constructor(private fb: FormBuilder,
+              private service: MessageService) { }
 
   async save() {
     if (this.form.valid) {
+      await this.service.sendMessage(this.createItem(this.form));
       this.success = true;
     } else {
       for (const control in this.form.controls) {
@@ -27,5 +32,15 @@ export class WriteMeComponent {
         this.form.controls[control].updateValueAndValidity();
       }
     }
+  }
+
+  createItem(form: FormGroup) {
+    const message: Message = {
+      id: 0,
+      name: form.controls.name.value,
+      email: form.controls.email.value,
+      text: form.controls.text.value
+    };
+    return message;
   }
 }

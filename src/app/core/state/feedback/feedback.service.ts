@@ -31,9 +31,8 @@ export class FeedbackService {
   }
 
   async sendFeedback(feedback: Feedback) {
-    const subject = 'Спасибо, что оставили отзыв на сайте "Front-end developer Nikita Runeev"';
     try {
-      return await this.handler.sendMessage(feedback.email, subject, 'feedback', feedback.feedback, feedback.name);
+      return await this.handler.sendMessage(feedback.email, 'feedback', feedback.feedback, feedback.name);
     } catch (e) {
       throwError(e);
     }
