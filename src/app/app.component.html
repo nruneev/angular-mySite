@@ -12,12 +12,12 @@
             <nr-stopwatch i18n-title="@@statusPeriod" title="Время" [hours]="hours" [minutes]="minutes" [seconds]="seconds"></nr-stopwatch>
         </span>
   </div>
-  <agent-widget></agent-widget>
+  <agent-widget [isDark]="isDarkTheme" (isDarkTheme)="setDarkMode($event)"></agent-widget>
 </nr-header>
 <aside id="main-sidebar" nrExpandable [nrExpanded]="sidebarExpanded$ | async">
   <agent-sidenav [navItems]="mainNavigationItems" [expanded]="sidebarExpanded$ | async"></agent-sidenav>
   <span>v. 0.0.1</span>
 </aside>
-<main>
+<main [ngClass]="{'dark' : isDarkTheme == '1'}">
   <router-outlet></router-outlet>
 </main>

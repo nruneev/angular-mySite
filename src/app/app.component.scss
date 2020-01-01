@@ -1,6 +1,9 @@
 :host {
   --section-bg: var(--main-fg);
   --header-ctrl-height-lg: 44px;
+  --input-bg: white;
+  --table-header-bg: #EFF3F5;
+  --btn-bg: #EFF3F5;
 
   --sidebar-compact-width: 70px;
   --sidebar-expanded-width: 250px;
@@ -19,7 +22,6 @@
   font-style: normal;
   font-weight: normal;
 }
-
 
 :host > nr-header {
   grid-area: header;
@@ -150,3 +152,12 @@
   grid-area: main;
   background-color: var(--main-bg);
 }
+
+.dark {
+  background-color: #1C272D !important;
+  --section-bg: #263238;
+  --input-bg: #1C272D;
+  --table-header-bg: #1C272D;
+  --btn-bg: #1C272D;
+}
+

@@ -22,6 +22,7 @@ import {FormGroup, FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { WriteMeComponent } from './write-me/write-me.component';
 import {TableComponents} from './table/table.component';
 import {TableModule} from './shared/table';
+import {CookieService} from 'ngx-cookie-service';
 
 @NgModule({
   declarations: [
@@ -53,7 +54,7 @@ import {TableModule} from './shared/table';
     SectionModule,
     TableModule
   ],
-  providers: [],
+  providers: [CookieService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

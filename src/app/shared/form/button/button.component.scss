@@ -31,7 +31,7 @@
 }
 
 :host([nrBtn="primary"]) {
-    background-color: #EFF3F5;
+    background-color: var(--btn-bg);
     color: #92A1AB;
 }
 
@@ -47,7 +47,7 @@
 }
 
 :host([nrBtn="primary"]):hover {
-    background-color: #e8ecee;
+    background-color: var(--btn-focus-bg);
 }
 
 :host([nrBtn="link"]):hover {

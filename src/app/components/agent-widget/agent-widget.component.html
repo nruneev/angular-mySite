@@ -4,6 +4,8 @@
     <nr-select-template [items]="menuItems">
         <nr-select-item *item="let item = item">
                 <a [routerLink]="item.link">{{item.title}}</a>
+                <a *ngIf="isDark == '0'" (click)="isDarkTheme.emit('darkMode')">Dark Thema</a>
+                <a *ngIf="isDark == '1'" (click)="isDarkTheme.emit('lightMode')">Light Thema</a>
         </nr-select-item>
     </nr-select-template>
 </div>
