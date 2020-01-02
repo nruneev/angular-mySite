@@ -91,3 +91,108 @@ nr-section-md {
     margin-right: 10px;
   }
 }
+
+@media screen and (max-width: 740px) {
+  nr-page-content {
+    margin: 50px 0;
+    padding: 0;
+    display: grid;
+    grid-template-areas:
+    "menu"
+    "form";
+    grid-template-columns: 1fr;
+
+  }
+
+  .menu {
+    grid-area: menu;
+
+    div {
+      display: grid;
+      height: fit-content;
+      padding: 10px 0;
+      border-left: 1px solid #C4C4C4;
+    }
+
+    a {
+      padding: 10px;
+      color: #B0BEC5;
+      font-weight: bold;
+      text-decoration: none;
+    }
+
+    .active {
+      border-left: 5px solid #068AB4;
+    }
+  }
+
+  .form {
+    grid-area: form;
+    padding: 0;
+    margin-top: 50px;
+    margin-left: 0;
+  }
+
+  nr-section-md {
+    min-width: 350px;
+    width: auto;
+    max-width: 530px;
+    height: auto;
+
+    div {
+      display: block;
+      margin-bottom: 35px;
+    }
+
+    span {
+      margin-top: 20px;
+      font-size: 1rem;
+      font-weight: bold;
+      color: #78909C;
+    }
+
+    p {
+      width: 1fr;
+      font-size: 1rem;
+      padding: 0 0 0 15px;
+      font-weight: bold;
+      color: #B0BEC5;
+    }
+
+    a {
+      text-decoration: none;
+      color: #068AB4;
+    }
+
+    nr-paginator {
+      --wm-pagination-border-radius: var(--std-radius);
+      --wm-pagination-font-size: 13px;
+      --wm-pagination-bg-color: white;
+      --wm-pagination-color: #bbbbbb;
+      --wm-pagination-bg-color-active-element: #eee;
+      --wm-pagination-color-active-element: #337ab7;
+
+      justify-self: end;
+    }
+  }
+
+  .button {
+    margin: 20px 0;
+
+    div {
+      display: block;
+    }
+    p {
+      min-width: 350px;
+      width: auto;
+      max-width: 530px;
+      padding: 10px;
+    }
+    a {
+      width: 250px;
+      height: 90px;
+      margin-top: 5px;
+      margin-right: 10px;
+    }
+  }
+}

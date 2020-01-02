@@ -27,3 +27,12 @@ p {
   margin-left: 15px;
 }
 
+@media screen and (max-width: 740px) {
+  nr-page {
+    min-width: 350px;
+    width: auto;
+    max-width: 530px;
+    margin: 50px auto;
+    padding: 20px;
+  }
+}
