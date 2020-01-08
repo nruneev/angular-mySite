@@ -23,6 +23,7 @@ import { WriteMeComponent } from './write-me/write-me.component';
 import {TableComponents} from './table/table.component';
 import {TableModule} from './shared/table';
 import {CookieService} from 'ngx-cookie-service';
+import { QwertyComponent } from './qwerty/qwerty.component';
 
 @NgModule({
   declarations: [
@@ -33,6 +34,7 @@ import {CookieService} from 'ngx-cookie-service';
     FormFieldComponent,
     WriteMeComponent,
     TableComponents,
+    QwertyComponent,
   ],
   imports: [
     BrowserModule,

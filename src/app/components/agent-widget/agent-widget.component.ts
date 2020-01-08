@@ -20,6 +20,6 @@ export class AgentWidgetComponent {
     @Output() isDarkTheme = new EventEmitter();
 
     menuItems: AgentMenuItems[] | {id: ID}[] = [
-      {id: 0, link: '', title: 'Справки'}
+      {id: 0, link: '', title: ''}
     ];
 }
